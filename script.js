@@ -14,7 +14,18 @@ function checkAge(abe){
 }
 document.getElementById("find").innerHTML = ab.find(checkAge);
 //flat-ը մեթոդը
-const arr1 = [1, 2, 3, [15, 20], 50]
-console.log(arr1.flat())
-const arr2 = [1, 2, 3, [15, 20], 50, [[[17, 66, 77]]]]
-console.log(arr2.flat(2))
+const arr1 = [1, 2, 3, [15, 20], 50];
+console.log(arr1.flat());
+const arr2 = [1, 2, 3, [15, 20], 50, [[[17, 66, 77]]]];
+console.log(arr2.flat(2));
+//map() մեթոդը յուրաքանչյուր զանգվածի տարրի համար ֆունկցիայի կանչից ստեղծում է նոր զանգված:
+//map(Math.sqrt).. Math.sqrt() մեթոդը վերադարձնում է թվի քառակուսի արմատը։ 
+const numbers = [4, 9, 16, 25,];
+document.getElementById("sqrt").innerHTML = numbers.map(Math.sqrt);
+//reduce() մեթոդը վերադարձնում է մեկ արժեք՝ ֆունկցիայի կուտակված արդյունքը:
+//reduce(myFunc) մեթոդը Զանգվածի թվերը հանեք՝ սկսած ձախից.
+const number = [180, 50, 30];
+document.getElementById("reduc").innerHTML = number.reduce(myFunc);
+function myFunc(total, num){
+    return total - num;
+}
