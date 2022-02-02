@@ -29,3 +29,39 @@ document.getElementById("reduc").innerHTML = number.reduce(myFunc);
 function myFunc(total, num){
     return total - num;
 }
+//  այն բաղկացած է միայն եզակի իրերից, թե ոչ։
+function unique(arr) {
+    const subArr = [];
+    subArr[0] = arr[0];
+    for(let i=0; i<arr.length; i++){
+        console.log(arr[i] + "   " + i);
+        for(let p = 0; p < subArr.length; p++){
+            if(subArr[p] == arr[i]){
+                break;
+            } else if (p == subArr.length - 1){
+                subArr.push(arr[i]);
+            }
+        }
+    }
+    return subArr;
+}
+const strings = ["Anna", "Anna", "poxos","poxos", "poxos", "petros"];
+document.getElementById("har").innerHTML = unique(strings)
+// Ինչպես կարող եմ ստուգել, ​​որ տվյալ բառը մաքուր Javascript-ով իզոգրամ է՝ օգտագործելով ֆունկցիա: ֆունկցիան պետք է վերադարձնի true կամ false:
+function isIsogram(word){
+    x = false; y = false;
+    for(i = 0; i < word.length; i++){
+        
+        wordl = word.substring(0,i)
+        wordr = word.substring(i)
+        x = wordl.includes(word.charAt(i))
+        y = wordr.includes(word.charAt(i))
+        document.getElementById("isogram").innerHTML = x;
+        document.getElementById("isogra").innerHTML =  wordl;
+        document.getElementById("isogr").innerHTML =  wordr;
+        //console.log(x,wordl,wordr)
+    }
+    return x&&y
+}
+isIsogram("thomas");//False
+isIsogram("moses"); //True
